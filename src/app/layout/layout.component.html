@@ -1,37 +1,53 @@
 <mat-toolbar class="top-toolbar">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+    (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>{{title}}</span>
+  <span class="layout-title" [routerLink]="'/'">{{title}}</span>
   <span class="example-spacer"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="menu">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+    [matMenuTriggerFor]="menu">
     <mat-icon>share</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-  <button mat-menu-item>Facebook</button>
-  <button mat-menu-item>KaKaoTalk</button>
-</mat-menu>
+    <button mat-menu-item>Facebook</button>
+    <button mat-menu-item>KaKaoTalk</button>
+  </mat-menu>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 
 <mat-drawer-container class="layout-container" autosize>
 
   <mat-drawer #drawer class="layout-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
 
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+    <mat-selection-list #shoes [multiple]="false">
+      <mat-list-option *ngFor="let sidemenu of sidemenuforlayout; index as sidemenuindex" [title]="'Go to'+routeforsidemenu[sidemenuindex]" [routerLink]="'/'+routeforsidemenu[sidemenuindex]">
+        {{sidemenu}}
+      </mat-list-option>
+    </mat-selection-list>
+
+
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            메뉴1
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>소메뉴1</p>
+        <p>소메뉴2</p>
+        <p>소메뉴3</p>
+      </mat-expansion-panel>
+    </mat-accordion>
 
   </mat-drawer>
 
   <router-outlet></router-outlet>
 
 </mat-drawer-container>
-  <mat-toolbar>
-    <span>It will be Layout Area</span>
-  </mat-toolbar>
+<mat-toolbar>
+  <span>It will be Layout Area</span>
+</mat-toolbar>

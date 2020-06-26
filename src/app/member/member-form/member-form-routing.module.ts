@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MbmerFormComponent } from './mbmer-form.component';
+import { MemberFormComponent } from './member-form.component';
 
-const routes: Routes = [{ path: '', component: MbmerFormComponent }];
+const routes: Routes = [{ path: '', component: MemberFormComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MbmerFormRoutingModule { }
+export class MemberFormRoutingModule { }

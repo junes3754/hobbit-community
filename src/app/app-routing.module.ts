@@ -49,11 +49,11 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'mbmer-form',
+    path: 'member-form',
     component: LayoutComponent,
     loadChildren: () =>
-      import('./member/mbmer-form/mbmer-form.module').then(
-        (m) => m.MbmerFormModule
+      import('./member/member-form/member-form.module').then(
+        (m) => m.MemberFormModule
       ),
   },
 
