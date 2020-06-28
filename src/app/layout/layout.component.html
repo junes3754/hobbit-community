@@ -17,7 +17,7 @@
     <button mat-menu-item>KaKaoTalk</button>
   </mat-menu>
 </mat-toolbar>
-<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar *ngIf="loading" class="loading-overlay" [mode]="'indeterminate'"></mat-progress-bar>
 
 <mat-drawer-container class="layout-container" autosize>
 
