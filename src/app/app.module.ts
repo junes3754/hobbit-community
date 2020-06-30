@@ -40,9 +40,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
+  declarations: [AppComponent, LayoutComponent, ClockComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
