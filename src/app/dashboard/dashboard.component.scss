@@ -1,0 +1,25 @@
+.mat-drawer-content{
+  overflow: hidden;
+}
+.dash-panel{
+  // width: 100%;
+  height: 100%;
+   -ms-overflow-style: none;
+   /* IE and Edge */
+   scrollbar-width: none;
+   /* Firefox */
+  display: flex;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.dash-list{
+  border:1px solid #000;
+  width: 40%;
+  background: #FFC447;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  height:10rem;
+}
